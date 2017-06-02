@@ -29,9 +29,12 @@ export default class AnimeList extends React.Component {
   render() {
     const { animes } = this.state;
     return (
-      <ListWrapper>
-        { animes.map(anime => <AnimeItem key={anime.id} {...anime} />) }
-      </ListWrapper>
+      <div>
+        <h1 style={{ textAlign: 'center', marginTop: 30 }}>Top Anime List</h1>
+        <ListWrapper>
+          { animes.map(anime => <AnimeItem key={anime.id} {...anime} />) }
+        </ListWrapper>
+      </div>
     )
   }
 }
