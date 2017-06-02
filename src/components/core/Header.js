@@ -8,6 +8,7 @@ const Header = glamorous.header({
   width: '100%',
   top: 0,
   borderBottom: '1px solid rgba(0,0,0,0.1)',
+  zIndex: '+999',
 });
 
 const Logo = glamorous.h1({
