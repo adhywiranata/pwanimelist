@@ -1,0 +1,32 @@
+{
+  "animes": [
+    {
+      "id": 1,
+      "title": "Shingeki no Kyojin Season 2",
+      "cover_image": "https://myanimelist.cdn-dena.com/images/anime/4/84177.jpg",
+      "mal_url": "https://myanimelist.net/anime/25777/Shingeki_no_Kyojin_Season_2",
+      "score": 8.69
+    },
+    {
+      "id": 2,
+      "title": "Boku no Hero Academia 2nd Season",
+      "cover_image": "https://myanimelist.cdn-dena.com/images/anime/12/85221.jpg",
+      "mal_url": "https://myanimelist.net/anime/33486/Boku_no_Hero_Academia_2nd_Season",
+      "score": 8.67
+    },
+    {
+      "id": 3,
+      "title": "Rokudenashi Majutsu Koushi to Akashic Records",
+      "cover_image": "https://myanimelist.cdn-dena.com/images/anime/8/85593.jpg",
+      "mal_url": "https://myanimelist.net/anime/32951/Rokudenashi_Majutsu_Koushi_to_Akashic_Records",
+      "score": 7.70
+    },
+    {
+      "id": 4,
+      "title": "Eromanga-sensei",
+      "cover_image": "https://myanimelist.cdn-dena.com/images/anime/9/85187.jpg",
+      "mal_url": "https://myanimelist.net/anime/32901/Eromanga-sensei",
+      "score": 7.17
+    }
+  ]
+}
