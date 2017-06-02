@@ -3,6 +3,7 @@ import glamorous from 'glamorous';
 import { Helmet } from 'react-helmet';
 
 import Header from './components/core/Header';
+import Cover from './components/core/Cover';
 import AnimeList from './components/AnimeList';
 
 const AppContainer = glamorous.div({
@@ -19,6 +20,7 @@ class App extends Component {
           <link rel="canonical" href="http://pwanimelist" />
         </Helmet>
         <Header />
+        <Cover />
         <AnimeList />
       </AppContainer>
     );
