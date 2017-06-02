@@ -2,7 +2,7 @@ import React from 'react';
 import glamorous from 'glamorous';
 
 const Card = glamorous.div({
-  width: '23%',
+  width: '18%',
   padding: 5,
   backgroundColor: '#FFFFFF',
   borderRadius: 5,
@@ -13,6 +13,12 @@ const Card = glamorous.div({
 const Title = glamorous.h2({
   fontSize: 18,
   fontWeight: 'normal',
+  textAlign: 'center',
+});
+
+const A = glamorous.a({
+  textDecoration: 'none',
+  color: '#353535',
 });
 
 const Cover = glamorous.img({
@@ -20,10 +26,11 @@ const Cover = glamorous.img({
   borderRadius: 5,
 });
 
-export default () => (
+export default ({ title, cover_image, mal_url }) => (
   <Card>
-    <Cover src="https://myanimelist.cdn-dena.com/images/anime/8/85593.jpg" />
-    <Title>Rokudenashi Majutsu Koushi to Akashic Records</Title>
-    <p>wow</p>
+    <Cover src={ cover_image } />
+    <A href={ mal_url } target="_blank" rel="noopener">
+      <Title>{ title }</Title>
+    </A>
   </Card>
 );

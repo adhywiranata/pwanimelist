@@ -1,5 +1,6 @@
 import React from 'react';
 import glamorous from 'glamorous';
+import axios from 'axios';
 
 import AnimeItem from './AnimeItem';
 
@@ -18,10 +19,18 @@ export default class AnimeList extends React.Component {
       animes: [],
     }
   }
+
+  componentDidMount() {
+    axios.get('http://localhost:1234/animes')
+      .then(res => this.setState({ animes: res.data }))
+      .catch(err => console.log(err))
+  }
+
   render() {
+    const { animes } = this.state;
     return (
       <ListWrapper>
-        { [1, 2, 3, 4].map(anime => <AnimeItem />) }
+        { animes.map(anime => <AnimeItem key={anime.id} {...anime} />) }
       </ListWrapper>
     )
   }
