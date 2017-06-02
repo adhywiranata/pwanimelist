@@ -27,6 +27,48 @@
       "cover_image": "https://myanimelist.cdn-dena.com/images/anime/9/85187.jpg",
       "mal_url": "https://myanimelist.net/anime/32901/Eromanga-sensei",
       "score": 7.17
+    },
+    {
+      "id": 5,
+      "title": "Kimi no Na wa.",
+      "cover_image": "https://myanimelist.cdn-dena.com/images/anime/7/79999.jpg",
+      "mal_url": "https://myanimelist.net/anime/32281/Kimi_no_Na_wa",
+      "score": 9.30
+    },
+    {
+      "id": 6,
+      "title": "Fullmetal Alchemist: Brotherhood",
+      "cover_image": "https://myanimelist.cdn-dena.com/images/anime/5/47421.jpg",
+      "mal_url": "https://myanimelist.net/anime/5114/Fullmetal_Alchemist__Brotherhood",
+      "score": 9.25
+    },
+    {
+      "id": 7,
+      "title": "Gintama°",
+      "cover_image": "https://myanimelist.cdn-dena.com/images/anime/3/72078.jpg",
+      "mal_url": "https://myanimelist.net/anime/28977/Gintama%C2%B0",
+      "score": 9.23
+    },
+    {
+      "id": 8,
+      "title": "Koe no Katachi",
+      "cover_image": "https://myanimelist.cdn-dena.com/images/anime/3/80136.jpg",
+      "mal_url": "https://myanimelist.net/anime/28851/Koe_no_Katachi",
+      "score": 9.15
+    },
+    {
+      "id": 9,
+      "title": "Steins;Gate",
+      "cover_image": "https://myanimelist.cdn-dena.com/images/anime/5/73199.jpg",
+      "mal_url": "https://myanimelist.net/anime/9253/Steins_Gate",
+      "score": 9.16
+    },
+    {
+      "id": 10,
+      "title": "Code Geass: Hangyaku no Lelouch R2",
+      "cover_image": "https://myanimelist.cdn-dena.com/images/anime/4/9391.jpg",
+      "mal_url": "https://myanimelist.net/anime/2904/Code_Geass__Hangyaku_no_Lelouch_R2",
+      "score": 8.96
     }
   ]
 }
