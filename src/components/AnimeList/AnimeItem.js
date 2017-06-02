@@ -50,7 +50,7 @@ const Cover = glamorous.img({
 
 export default ({ title, cover_image, mal_url }) => (
   <Card>
-    <Cover src={ cover_image } />
+    <Cover src={ cover_image } alt={ title} />
     <Overlay>
       <A href={ mal_url } target="_blank" rel="noopener">
         <Title>{ title }</Title>
