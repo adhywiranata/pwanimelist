@@ -12,6 +12,7 @@ export default function register() {
   if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
+      console.log(swUrl);
       navigator.serviceWorker
         .register(swUrl)
         .then(registration => {
@@ -29,7 +30,7 @@ export default function register() {
                   // At this point, everything has been precached.
                   // It's the perfect time to display a
                   // "Content is cached for offline use." message.
-                  console.log('Content is cached for offline use.');
+                  console.log('App Content is cached for offline use.');
                 }
               }
             };

@@ -1,12 +1,18 @@
-const CACHE_NAME = 'pwanimelist-cache-v1';
-const urlsToCache = [
+// import toolbox from 'sw-toolbox';
+// console.log(toolbox);
+//
+// toolbox.router.get('https://myanimelist.cdn-dena.com/images/*', toolbox.cacheFirst);
+console.log('is this even called???');
+var CACHE_NAME = 'pwanimelist-cache-v1';
+var urlsToCache = [
   '/',
-  '/styles/main.css',
-  '/script/main.js'
+  '/manifest.json',
+  '/service-worker.js',
 ];
 
 self.addEventListener('install', (event) => {
   // Perform install steps
+  console.log('installing service worker');
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
@@ -18,6 +24,7 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+  console.log('Service Worker is Fetching..');
   event.respondWith(
     caches.match(event.request)
       .then((response) => {
