@@ -8,13 +8,26 @@ import Cover from './components/core/Cover';
 import AnimeList from './components/AnimeList';
 import AnimeDetail from './components/AnimeList/AnimeDetail';
 
+const OfflineStatus = () => (
+  <div style={{ position: 'fixed', bottom: 0, width: '89%', backgroundColor: 'rgba(0,0,0,0.8)', margin: 10, padding: 10, textAlign: 'center', zIndex: '+999' }}>
+    <span style={{ color: '#FFFFFF' }}>You Are Offline</span>
+  </div>
+);
+
 const AppContainer = glamorous.div({
   minHeight: '100vh',
 });
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isAppOnline: true,
+    };
+  }
   componentWillMount() {
     //After DOM Loaded
+    const self = this;
     document.addEventListener('DOMContentLoaded', function(event) {
       //On initial load to check connectivity
       if (!navigator.onLine) {
@@ -28,15 +41,16 @@ class App extends Component {
     //To update network status
     function updateNetworkStatus() {
       if (navigator.onLine) {
-        console.log('you are online');
+        self.setState({ isAppOnline: true });
       }
       else {
-        console.log('you are offline!');
+        self.setState({ isAppOnline: false });
       }
     }
   }
 
   render() {
+    const { isAppOnline } = this.state;
     return (
       <BrowserRouter>
         <AppContainer>
@@ -47,6 +61,7 @@ class App extends Component {
           </Helmet>
           <Header />
           <Cover />
+          { !isAppOnline && <OfflineStatus /> }
           <Switch>
             <Route exact path="/" component={AnimeList} />
             <Route path="/:id" component={AnimeDetail} />
