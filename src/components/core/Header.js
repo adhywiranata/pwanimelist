@@ -3,7 +3,7 @@ import glamorous from 'glamorous';
 
 const Header = glamorous.header({
   padding: 5,
-  backgroundColor: '#F5F5F5',
+  backgroundColor: '#52B3D9',
   position: 'fixed',
   width: '100%',
   top: 0,
@@ -12,9 +12,9 @@ const Header = glamorous.header({
 });
 
 const Logo = glamorous.h1({
-  fontSize: 20,
-  fontWeight: 'bold',
+  fontSize: 25,
   textAlign: 'center',
+  color: '#FFFFFF',
 });
 
 export default () => (

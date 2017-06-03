@@ -1,6 +1,7 @@
 import React from 'react';
 import glamorous from 'glamorous';
 import axios from 'axios';
+import localforage from 'localforage';
 
 import AnimeItem from './AnimeItem';
 
@@ -10,7 +11,7 @@ const ListWrapper = glamorous.div({
   flexDirection: 'row',
   flexWrap: 'wrap',
   justifyContent: 'space-around',
-  padding: 20,
+  padding: 40,
 });
 
 export default class AnimeList extends React.Component {
@@ -18,20 +19,54 @@ export default class AnimeList extends React.Component {
     super(props);
     this.state = {
       animes: [],
-    }
+      blobImage: {},
+    };
   }
 
   componentDidMount() {
     axios.get('http://localhost:1234/animes')
-      .then(res => this.setState({ animes: res.data }))
-      .catch(err => console.log(err))
+      .then(res => {
+        const animes = res.data;
+        // set to local state
+        this.setState({ animes });
+        // set to local storage
+        localforage.setItem('animes', animes).then(() => {
+          return localforage.getItem('animes');
+        }).then((value) => {
+          console.log(value);
+        }).catch((err) => {
+          console.log(err);
+        });
+      })
+      .catch(err => {
+        localforage.getItem('animes')
+        .then((value) => {
+          this.setState({ animes: value });
+        })
+        .catch((err) => { console.log(err) });
+      });
+
+      axios('https://myanimelist.cdn-dena.com/images/anime/4/84177.jpg',{
+        responseType: 'blob',
+      })
+        .then((res) => {
+          console.log(res);
+          let reader = new window.FileReader();
+          reader.readAsDataURL(res.data);
+          reader.onloadend = () => {
+            let base64data = reader.result;
+            this.setState({ blobImage: base64data });
+          }
+        })
+        .catch((err) => { console.log(err) });
   }
 
   render() {
-    const { animes } = this.state;
+    const { animes, blobImage } = this.state;
     return (
       <div>
         <h1 style={{ textAlign: 'center', marginTop: 30 }}>Top Anime List</h1>
+        <img src={blobImage} width="300px" alt="loading" />
         <ListWrapper>
           { animes.map(anime => <AnimeItem key={anime.id} {...anime} />) }
         </ListWrapper>
