@@ -11,7 +11,13 @@ const ListWrapper = glamorous.div({
   flexDirection: 'row',
   flexWrap: 'wrap',
   justifyContent: 'space-around',
-  padding: 20,
+  padding: 60,
+  '@media(max-width: 1024px)': {
+    padding: 30,
+  },
+  '@media(max-width: 480px)': {
+    padding: 10,
+  },
 });
 
 export default class AnimeList extends React.Component {
