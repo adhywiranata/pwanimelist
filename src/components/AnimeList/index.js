@@ -47,7 +47,7 @@ export default class AnimeList extends React.Component {
   }
 
   render() {
-    const { animes, blobImage } = this.state;
+    const { animes } = this.state;
     return (
       <div>
         <h1 style={{ textAlign: 'center', marginTop: 30 }}>Top Anime List</h1>

@@ -1,27 +1,8 @@
 import React from 'react';
 import glamorous from 'glamorous';
+import { Link } from 'react-router-dom';
 
-const Card = glamorous.div({
-  width: '23%',
-  padding: 10,
-  backgroundColor: '#FFFFFF',
-  borderRadius: 5,
-  marginTop: 10,
-  border: '1px solid rgba(0,0,0,0.1)',
-  boxShadow: '0px 4px 5px 0px rgba(0,0,0,0.2)',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  '@media(max-width: 1024px)': {
-    width: '45%',
-  },
-  '@media(max-width: 720px)': {
-    width: '85%',
-  },
-  '@media(max-width: 400px)': {
-    width: '100%',
-  },
-});
+import Card from '../core/Card';
 
 const Cover = glamorous.div({
   flex: 1,
@@ -57,6 +38,7 @@ const Score = glamorous.span({
 
 export default ({ title, score, cover_image, mal_url }) => (
   <Card>
+    <Link to="/wow" style={{ display: 'flex', flexDirection: 'row', padding: 20, textDecoration: 'none' }}>
     <Cover>
       <img src={cover_image} alt={title} style={{ width: '100%' }} />
     </Cover>
@@ -64,5 +46,6 @@ export default ({ title, score, cover_image, mal_url }) => (
         <Title>{ title }</Title>
         <Score>{ score }</Score>
     </Content>
+    </Link>
   </Card>
 );
