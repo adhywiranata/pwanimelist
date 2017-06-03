@@ -16,11 +16,6 @@ const Content = glamorous.div({
   justifyContent: 'flex-start',
 });
 
-const A = glamorous.a({
-  textDecoration: 'none',
-  color: '#353535',
-});
-
 const Title = glamorous.h2({
   fontSize: 18,
   fontWeight: 'normal',

@@ -3,7 +3,7 @@ import glamorous from 'glamorous';
 
 const Header = glamorous.header({
   padding: 5,
-  backgroundColor: '#52B3D9',
+  backgroundColor: '#3498DB',
   position: 'fixed',
   width: '100%',
   top: 0,
@@ -21,7 +21,7 @@ const Logo = glamorous.h1({
 export default () => (
   <Header>
     <Logo>
-      PwaAnimeList
+      MyPWAnimeList
     </Logo>
   </Header>
 )

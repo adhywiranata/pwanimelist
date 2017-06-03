@@ -38,7 +38,7 @@ export default class AnimeList extends React.Component {
         localforage.setItem('animes', animes).then(() => {
           return localforage.getItem('animes');
         }).then((value) => {
-          console.log(value);
+          // console.log(value);
         }).catch((err) => {
           console.log(err);
         });
