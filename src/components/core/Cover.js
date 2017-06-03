@@ -6,6 +6,7 @@ import CoverImg from '../../images/cover.jpg';
 const CoverContainer = glamorous.div({
   width: '100%',
   background: '#F5F5F5',
+  marginTop: 70,
 });
 
 export default () => (

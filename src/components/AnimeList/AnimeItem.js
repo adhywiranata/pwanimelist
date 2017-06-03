@@ -3,12 +3,12 @@ import glamorous from 'glamorous';
 
 const Card = glamorous.div({
   width: '23%',
-  padding: 5,
-  backgroundColor: '#353535',
+  padding: 10,
+  backgroundColor: '#FFFFFF',
   borderRadius: 5,
-  border: '1px solid rgba(0,0,0,0.1)',
   marginTop: 10,
-  position: 'relative',
+  border: '1px solid rgba(0,0,0,0.1)',
+  boxShadow: '0px 4px 5px 0px rgba(0,0,0,0.2)',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
@@ -23,12 +23,16 @@ const Card = glamorous.div({
   },
 });
 
-const Overlay = glamorous.div({
-  position: 'absolute',
-  bottom: '20%',
-  left: 0,
-  backgroundColor: 'rgba(0,0,0, 0.8)',
-  width: '100%',
+const Cover = glamorous.div({
+  flex: 1,
+});
+
+const Content = glamorous.div({
+  flex: 1,
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'flex-start',
 });
 
 const A = glamorous.a({
@@ -40,21 +44,25 @@ const Title = glamorous.h2({
   fontSize: 18,
   fontWeight: 'normal',
   textAlign: 'center',
-  color: '#FFFFFF',
+  color: '#353535',
+  padding: 10,
 });
 
-const Cover = glamorous.img({
-  width: '100%',
-  borderRadius: 5,
+const Score = glamorous.span({
+  fontSize: 50,
+  fontWeight: 'bold',
+  textAlign: 'center',
+  color: '#EB9532',
 });
 
-export default ({ title, cover_image, mal_url }) => (
+export default ({ title, score, cover_image, mal_url }) => (
   <Card>
-    <Cover src={ cover_image } alt={ title} />
-    <Overlay>
-      <A href={ mal_url } target="_blank" rel="noopener">
+    <Cover>
+      <img src={cover_image} alt={title} style={{ width: '100%' }} />
+    </Cover>
+    <Content>
         <Title>{ title }</Title>
-      </A>
-    </Overlay>
+        <Score>{ score }</Score>
+    </Content>
   </Card>
 );

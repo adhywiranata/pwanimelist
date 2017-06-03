@@ -6,12 +6,12 @@ import localforage from 'localforage';
 import AnimeItem from './AnimeItem';
 
 const ListWrapper = glamorous.div({
-  marginTop: 100,
+  marginTop: 0,
   display: 'flex',
   flexDirection: 'row',
   flexWrap: 'wrap',
   justifyContent: 'space-around',
-  padding: 40,
+  padding: 20,
 });
 
 export default class AnimeList extends React.Component {
@@ -19,7 +19,6 @@ export default class AnimeList extends React.Component {
     super(props);
     this.state = {
       animes: [],
-      blobImage: {},
     };
   }
 
@@ -45,20 +44,6 @@ export default class AnimeList extends React.Component {
         })
         .catch((err) => { console.log(err) });
       });
-
-      axios('https://myanimelist.cdn-dena.com/images/anime/4/84177.jpg',{
-        responseType: 'blob',
-      })
-        .then((res) => {
-          console.log(res);
-          let reader = new window.FileReader();
-          reader.readAsDataURL(res.data);
-          reader.onloadend = () => {
-            let base64data = reader.result;
-            this.setState({ blobImage: base64data });
-          }
-        })
-        .catch((err) => { console.log(err) });
   }
 
   render() {
@@ -66,7 +51,6 @@ export default class AnimeList extends React.Component {
     return (
       <div>
         <h1 style={{ textAlign: 'center', marginTop: 30 }}>Top Anime List</h1>
-        <img src={blobImage} width="300px" alt="loading" />
         <ListWrapper>
           { animes.map(anime => <AnimeItem key={anime.id} {...anime} />) }
         </ListWrapper>

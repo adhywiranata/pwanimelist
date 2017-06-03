@@ -5,27 +5,29 @@ const urlsToCache = [
   '/script/main.js'
 ];
 
-self.addEventListener('install', function(event) {
+self.addEventListener('install', (event) => {
   // Perform install steps
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then(function(cache) {
+      .then((cache) => {
         console.log('Opened cache');
+        // add all files to cache
         return cache.addAll(urlsToCache);
-      })
+      });
   );
 });
 
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request)
-      .then(function(response) {
+      .then((response) => {
         // Cache hit - return response
         if (response) {
           return response;
         }
+        // no Cache - return fetch
         return fetch(event.request);
       }
-    )
+    );
   );
 });
