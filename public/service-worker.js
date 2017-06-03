@@ -31,3 +31,19 @@ self.addEventListener('fetch', (event) => {
     );
   );
 });
+
+// Fired when the Service Worker starts up
+self.addEventListener('activate', (event) => {
+  console.log('Service Worker: Activating....');
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(cacheNames.map((key) => {
+        if( key !== cacheName) {
+          console.log('Service Worker: Removing Old Cache', key);
+          return caches.delete(key);
+        }
+      }));
+    })
+  );
+  return self.clients.claim();
+});
