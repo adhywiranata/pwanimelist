@@ -31,9 +31,9 @@ export default class AnimeDetail extends React.Component {
     return (
       <DetailWrapper>
       <Title>Shingeki no Kyojin Sisen dua</Title>
-        <Cover src="https://myanimelist.cdn-dena.com/images/anime/4/84177.jpg" />
         <Card>
           <div style={{ display: 'flex', flexDirection: 'column', padding: 20, alignItems: 'center' }}>
+            <Cover src="https://myanimelist.cdn-dena.com/images/anime/4/84177.jpg" />
             <Score>8.53</Score>
             <p>
               Lorem ipsum dolor sit amet bla bla bla

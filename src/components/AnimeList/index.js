@@ -10,7 +10,7 @@ const ListWrapper = glamorous.div({
   display: 'flex',
   flexDirection: 'row',
   flexWrap: 'wrap',
-  justifyContent: 'space-around',
+  justifyContent: 'flex-start',
   padding: 60,
   '@media(max-width: 1024px)': {
     padding: 30,
