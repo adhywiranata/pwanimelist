@@ -6,7 +6,7 @@ export default glamorous.div({
   padding: 0,
   backgroundColor: '#FFFFFF',
   borderRadius: 5,
-  margin: 10,
+  marginTop: 10,
   border: '1px solid rgba(0,0,0,0.1)',
   boxShadow: '0px 4px 5px 0px rgba(0,0,0,0.2)',
   display: 'flex',
